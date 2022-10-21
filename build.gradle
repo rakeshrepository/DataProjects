@@ -1,0 +1,46 @@
+plugins {
+    id 'org.springframework.boot' version '2.7.4'
+    id 'io.spring.dependency-management' version '1.0.14.RELEASE'
+    id 'java'
+}
+
+group = 'com.demo'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    compileOnly 'org.projectlombok:lombok'
+    runtimeOnly 'org.postgresql:postgresql'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    implementation 'org.apache.flink:flink-java:1.15.2'
+    compileOnly 'org.apache.flink:flink-streaming-java:1.15.2'
+    implementation 'org.apache.flink:flink-clients:1.15.2'
+    implementation 'org.apache.flink:flink-connector-kafka:1.15.2'
+    compileOnly 'org.apache.flink:flink-table-api-java-bridge:1.15.2'
+    compileOnly 'org.apache.flink:flink-table-planner_2.12:1.15.2'
+    testImplementation 'org.apache.flink:flink-table-planner-blink_2.12:1.13.6'
+
+    implementation 'com.google.code.gson:gson:2.9.1'
+    compileOnly 'org.apache.flink:flink-jdbc_2.12:1.10.3'
+
+
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

@@ -1,0 +1,10 @@
+{
+  "id": "63319e8ea80ed319ef538789",
+  "deviceId": "Device1",
+  "modelId": "model3",
+  "version": "version2",
+  "timestamp": "Sep 21, 2022, 6:58:12 AM",
+  "payload": {
+    "attributeId": "OFF"
+  }
+}
